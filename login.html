@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SISTEM INFORMASI KOPERASI MI</title>
+    <style>
+        body {
+            background-color: #00bfff;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            width: 350px;
+            padding: 20px;
+            margin: 100px auto;
+            background-color: #6ec7c2;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+            margin-bottom: 15px;
+        }
+
+        input[type="checkbox"] {
+            margin-right: 5px;
+        }
+
+        button {
+            background-color: #26bb2b;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .forgot-password {
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        a {
+            color: #333;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .logo {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .logo img {
+            width: 50px;
+            height: 50px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Login Ke Akun Anda</h2>
+    <form id="loginForm">
+        <label for="email">Email:</label>
+        <input type="text" id="email" name="email" required>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+
+        <input type="checkbox" id="showPassword" name="showPassword">
+        <label for="showPassword">Tampilkan Password</label>
+
+        <button type="submit">LOGIN</button>
+    </form>
+
+    <div class="forgot-password">
+        <a href="#">Anda Lupa Password? Reset password</a>
+    </div>
+</div>
+
+<script>
+    const showPasswordCheckbox = document.getElementById('showPassword');
+    const passwordInput = document.getElementById('password');
+
+    showPasswordCheckbox.addEventListener('change', function() {
+        if (this.checked) {
+            passwordInput.type = 'text';
+        } else {
+            passwordInput.type = 'password';
+        }
+    });
+
+    document.getElementById('loginForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        const email = document.getElementById('email').value;
+        const password = document.getElementById('password').value;
+
+        // Simulate a login check
+        if (email === 'nama' && password === '12345678') {
+            // Redirect to index.html if login is successful
+            window.location.href = 'index.html';
+        } else {
+            alert('Email atau password salah.');
+        }
+    });
+</script>
+
+</body>
+</html>
